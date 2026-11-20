@@ -1,0 +1,1323 @@
+<!DOCTYPE html>
+<html lang="ko" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GW Partners (Great Wealth Partners) | 장 생태계 과학 & 한국식 맥식단</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts: Noto Serif KR & Pretendard -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        forest: {
+                            50: '#F1F6F4',
+                            100: '#DFECE7',
+                            800: '#163D30',
+                            900: '#0F2E24',
+                            950: '#091E17',
+                        },
+                        gold: {
+                            100: '#F8F2E4',
+                            200: '#EFE1C2',
+                            300: '#E2C992',
+                            400: '#D4B46A',
+                            500: '#C5A059',
+                            600: '#A6823E',
+                        },
+                        hanji: '#F9F7F2',
+                        charcoal: '#1A1D1C',
+                        obsidian: '#0D0F0E'
+                    },
+                    fontFamily: {
+                        sans: ['Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'Roboto', 'sans-serif'],
+                        serif: ['"Noto Serif KR"', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Pretendard', sans-serif;
+            background-color: #F9F7F2;
+            color: #1A1D1C;
+            overflow-x: hidden;
+        }
+        .font-serif-kr {
+            font-family: 'Noto Serif KR', serif;
+        }
+        /* Hanji Texture Background */
+        .hanji-bg {
+            background-color: #F9F7F2;
+            background-image: radial-gradient(rgba(197, 160, 89, 0.08) 1px, transparent 0);
+            background-size: 24px 24px;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F9F7F2;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #0F2E24;
+            border-radius: 4px;
+        }
+        /* Progress Bar Animation */
+        .scfa-bar {
+            transition: width 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        /* Gallery Thumbnail Active Ring */
+        .thumb-active {
+            border-color: #C5A059 !important;
+            box-shadow: 0 0 0 2px rgba(197, 160, 89, 0.4);
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-forest-900 selection:text-gold-300">
+
+    <!-- ==================== HEADER / NAVIGATION ==================== -->
+    <header class="fixed top-0 left-0 right-0 z-40 bg-white/95 backdrop-blur-md border-b border-forest-900/10 transition-all shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <!-- Signature Logo: GW Partners (Great Wealth) -->
+                <a href="#" class="flex items-center space-x-3 group" aria-label="GW Partners 홈으로 이동">
+                    <svg class="h-11 w-auto" viewBox="0 0 230 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.5 14.5C23.8 11.8 20.1 10.3 15.8 10.3C8.2 10.3 2.5 16.1 2.5 24C2.5 31.9 8.2 37.7 15.8 37.7C22.4 37.7 27.3 33.4 27.8 26.8H16.2V23.4H31.5V25.5C31.5 34.8 24.9 41.2 15.8 41.2C6.1 41.2 -1 33.8 -1 24C-1 14.2 6.1 6.8 15.8 6.8C21.2 6.8 25.8 8.8 29.1 12.2L26.5 14.5Z" transform="translate(3, 0)" fill="#1A1D1C"/>
+                        <path d="M38 7.5L47.5 36.2L54.8 14.5H57.8L48.8 40.8H46L34.2 7.5H38Z" fill="#1A1D1C"/>
+                        <path d="M55.2 14.5L63.5 36.2L75.5 3.5L77.2 4.1L64.8 40.8H62L52.2 14.5H55.2Z" fill="#C5A059"/>
+                        <text x="80" y="34" fill="#1A1D1C" font-family="Pretendard, sans-serif" font-weight="500" font-size="27" letter-spacing="-0.02em">Partners</text>
+                        <text x="58" y="51" fill="#4B5563" font-family="Pretendard, sans-serif" font-weight="500" font-size="12.5" letter-spacing="0.06em">Great Wealth</text>
+                    </svg>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-charcoal/80">
+                    <a href="#vision" class="hover:text-forest-900 transition py-2">기업 비전</a>
+                    <a href="#microbiome" class="hover:text-forest-900 transition py-2">장 생태계 과학</a>
+                    <a href="#macs" class="hover:text-forest-900 transition py-2">스탠포드 MACs · 맥식단</a>
+                    <a href="#product" class="hover:text-forest-900 transition py-2">아침엔 톡톡</a>
+                    <a href="#manufacturer" class="hover:text-forest-900 transition py-2">제조원 (주)한미양행</a>
+                    <a href="#product" class="px-5 py-2.5 rounded-full bg-forest-900 text-white hover:bg-forest-800 transition shadow-sm flex items-center space-x-2">
+                        <i class="fa-solid fa-leaf text-gold-400"></i>
+                        <span>제품 갤러리</span>
+                    </a>
+                </nav>
+
+                <!-- Mobile Hamburger Button -->
+                <button id="mobile-menu-btn" type="button" class="lg:hidden p-3 rounded-xl text-forest-900 hover:bg-forest-50 transition" aria-label="메뉴 열기">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-gray-200 px-4 pt-2 pb-6 space-y-2 shadow-xl">
+            <a href="#vision" class="mobile-nav-link block px-4 py-3 rounded-xl font-semibold text-charcoal hover:bg-forest-50">기업 비전 & 대표이사 메시지</a>
+            <a href="#microbiome" class="mobile-nav-link block px-4 py-3 rounded-xl font-semibold text-charcoal hover:bg-forest-50">장 생태계 과학</a>
+            <a href="#macs" class="mobile-nav-link block px-4 py-3 rounded-xl font-semibold text-charcoal hover:bg-forest-50">스탠포드 MACs & 한국식 맥식단</a>
+            <a href="#product" class="mobile-nav-link block px-4 py-3 rounded-xl font-semibold text-charcoal hover:bg-forest-50">시그니처 '아침엔 톡톡'</a>
+            <a href="#manufacturer" class="mobile-nav-link block px-4 py-3 rounded-xl font-semibold text-charcoal hover:bg-forest-50">제조사 (주)한미양행</a>
+        </div>
+    </header>
+
+    <main class="pt-20">
+        <!-- ==================== 1. HERO SECTION ==================== -->
+        <section class="relative overflow-hidden bg-gradient-to-br from-forest-950 via-forest-900 to-obsidian text-white py-20 sm:py-28 lg:py-32">
+            <!-- Decorative Glow Backgrounds -->
+            <div class="absolute -top-24 -right-24 w-96 h-96 rounded-full bg-gold-500/10 blur-3xl pointer-events-none"></div>
+            <div class="absolute bottom-0 left-0 w-80 h-80 rounded-full bg-emerald-500/10 blur-3xl pointer-events-none"></div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-7">
+                        <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 border border-gold-400/30 text-gold-300 text-xs sm:text-sm font-medium">
+                            <span class="w-2 h-2 rounded-full bg-gold-400 animate-pulse"></span>
+                            <span>STANFORD MACs SCIENCE × KOREAN BOTANICAL WELLNESS</span>
+                        </div>
+
+                        <h1 class="font-serif-kr text-3xl sm:text-5xl lg:text-[3.25rem] font-bold leading-tight tracking-tight">
+                            장 생태계의 균형에서 시작되는<br>
+                            <span class="text-gold-400">위대한 건강과 풍요</span>
+                        </h1>
+
+                        <p class="text-gray-200 text-base sm:text-lg leading-relaxed max-w-2xl">
+                            <strong>GW Partners(Great Wealth Partners)</strong>는 스탠포드 대학교 의과대학의 <strong>MACs(미생물 접근 가능 탄수화물)</strong> 과학 이론과 한국 전통 본초의 지혜를 결합한 <strong>한국식 맥식단</strong>으로, 인체 장 생태계의 자생적 균형과 건강한 삶의 가치를 연결합니다.
+                        </p>
+
+                        <div class="flex flex-col sm:flex-row gap-4 pt-2">
+                            <a href="#microbiome" class="px-7 py-4 rounded-2xl bg-gold-500 hover:bg-gold-400 text-forest-950 font-bold text-center text-sm sm:text-base transition shadow-lg flex items-center justify-center space-x-2">
+                                <span>장 생태계 과학 보기</span>
+                                <i class="fa-solid fa-arrow-down text-xs"></i>
+                            </a>
+                            <a href="#product" class="px-7 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/25 text-white font-semibold text-center text-sm sm:text-base transition flex items-center justify-center space-x-2">
+                                <i class="fa-solid fa-camera text-gold-400"></i>
+                                <span>제품 실물 사진 확인하기</span>
+                            </a>
+                        </div>
+
+                        <!-- 3 Core Pillars Strip -->
+                        <div class="grid grid-cols-3 gap-4 pt-6 border-t border-white/10 max-w-xl">
+                            <div>
+                                <p class="text-gold-400 font-bold text-sm sm:text-base">Well-aging</p>
+                                <p class="text-xs text-gray-300 mt-0.5">건강하고 품격 있는 노화</p>
+                            </div>
+                            <div>
+                                <p class="text-gold-400 font-bold text-sm sm:text-base">Inner Beauty</p>
+                                <p class="text-xs text-gray-300 mt-0.5">장 생태계 중심 내면 건강</p>
+                            </div>
+                            <div>
+                                <p class="text-gold-400 font-bold text-sm sm:text-base">Financial Wealth</p>
+                                <p class="text-xs text-gray-300 mt-0.5">지속 가능한 풍요와 자유</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hero Right Featured Product Card (Photo + Spec) -->
+                    <div class="lg:col-span-5">
+                        <div class="rounded-3xl bg-white/5 backdrop-blur-md border border-gold-400/25 p-6 sm:p-7 shadow-2xl space-y-5">
+                            <!-- Hero Image Thumbnail View -->
+                            <div class="relative h-60 rounded-2xl overflow-hidden bg-forest-950 border border-white/10 group">
+                                <img src="images.jfif" alt="GW Partners 아침엔 톡톡 실물 제품 패키지" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='jIMII1768371701.jpg';">
+                                <div class="absolute inset-0 bg-gradient-to-t from-forest-950 via-transparent to-transparent opacity-80"></div>
+                                <div class="absolute bottom-3 left-4 right-4 flex items-center justify-between text-white">
+                                    <div>
+                                        <p class="text-xs text-gold-300 font-semibold">GOOD MORNING TALK TALK</p>
+                                        <p class="text-lg font-bold">아침엔 톡톡 (1포 5.5g)</p>
+                                    </div>
+                                    <span class="px-3 py-1 rounded-full bg-gold-500 text-forest-950 font-extrabold text-xs">
+                                        차전자피 4,400mg
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="space-y-3 text-xs sm:text-sm">
+                                <div class="p-3.5 rounded-xl bg-forest-950/80 border border-white/10 flex items-start space-x-3">
+                                    <i class="fa-solid fa-dna text-emerald-400 text-lg mt-0.5 shrink-0"></i>
+                                    <div>
+                                        <p class="font-bold text-white">스탠포드 의대 MACs 포뮬러</p>
+                                        <p class="text-gray-300 text-xs mt-0.5">대장 끝까지 전달되어 장내 공생 미생물의 먹이가 되는 복합 식물성 다당류</p>
+                                    </div>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-forest-950/80 border border-white/10 flex items-start space-x-3">
+                                    <i class="fa-solid fa-leaf text-gold-400 text-lg mt-0.5 shrink-0"></i>
+                                    <div>
+                                        <p class="font-bold text-white">23종 한국식 엄선 원료</p>
+                                        <p class="text-gray-300 text-xs mt-0.5">차전자피, 줄풀, 귀리, 17종 혼합유산균(BNR17 포함) 황금 배합</p>
+                                    </div>
+                                </div>
+                                <div class="p-3.5 rounded-xl bg-forest-950/80 border border-white/10 flex items-start space-x-3">
+                                    <i class="fa-solid fa-certificate text-sky-400 text-lg mt-0.5 shrink-0"></i>
+                                    <div>
+                                        <p class="font-bold text-white">50년 전통 (주)한미양행 제조</p>
+                                        <p class="text-gray-300 text-xs mt-0.5">국내 최초 HACCP 및 GMP 동시 인증 시설의 철저한 품질 관리</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <a href="#product" class="block w-full py-3.5 rounded-xl bg-white text-forest-950 font-bold text-center text-sm hover:bg-gold-100 transition shadow">
+                                제품 실물 사진 & 23종 원료 상세보기 →
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 2. CORPORATE VISION & REPRESENTATIVE BANNER ==================== -->
+        <section id="vision" class="py-20 sm:py-28 hanji-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
+                <div class="text-center max-w-3xl mx-auto">
+                    <span class="text-xs font-bold tracking-[0.22em] text-gold-600 uppercase">CORPORATE PHILOSOPHY</span>
+                    <h2 class="font-serif-kr text-3xl sm:text-4xl font-bold text-forest-900 mt-2">
+                        당신의 삶을 바꾸는 위대한 연결
+                    </h2>
+                    <p class="text-gray-600 text-sm sm:text-base mt-3">
+                        GW Partners는 건강한 신체와 균형 잡힌 생태계, 그리고 풍요로운 미래가 하나로 이어지는 바른 웰니스 문화를 만들어 갑니다.
+                    </p>
+                </div>
+
+                <!-- Representative Vision Banner (Deep Black Left + Torn Divider + Uploaded Portrait Image Right) -->
+                <div class="rounded-3xl overflow-hidden shadow-2xl border border-gold-500/25 bg-obsidian grid grid-cols-1 lg:grid-cols-12 relative">
+                    <!-- Left Deep Black Panel -->
+                    <div class="lg:col-span-7 bg-obsidian text-white p-8 sm:p-12 lg:p-14 flex flex-col justify-between relative z-10">
+                        <div class="space-y-8">
+                            <!-- Mini Brand Badge -->
+                            <div class="inline-block bg-white px-4 py-2 rounded-lg shadow">
+                                <span class="font-bold text-charcoal tracking-tight text-base">GW<span class="text-gold-500">V</span>Partners</span>
+                                <span class="block text-[10px] text-gray-500 tracking-wider -mt-1">Great Wealth</span>
+                            </div>
+
+                            <div class="space-y-3 pt-2">
+                                <h3 class="text-xl sm:text-2xl lg:text-3xl font-medium text-white leading-snug">
+                                    당신의 삶을 바꾸는 위대한 연결,
+                                </h3>
+                                <p class="text-2xl sm:text-3xl lg:text-4xl font-extrabold italic tracking-tight text-[#FFE600]">
+                                    Great Wealth Partners<span class="not-italic font-semibold text-white">가 시작합니다!</span>
+                                </p>
+                            </div>
+
+                            <!-- 3 Core Pillars -->
+                            <ul class="space-y-4 pt-4 text-sm sm:text-base">
+                                <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-5">
+                                    <span class="font-bold italic text-[#FFE600] w-44 shrink-0 flex items-center">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-[#FFE600] mr-2.5"></span>Well-aging
+                                    </span>
+                                    <span class="text-gray-100">건강하고 아름답게 늙어가는 것</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-5">
+                                    <span class="font-bold italic text-[#FFE600] w-44 shrink-0 flex items-center">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-[#FFE600] mr-2.5"></span>Inner Beauty
+                                    </span>
+                                    <span class="text-gray-100">몸속부터 건강과 아름다움을 채우는 것</span>
+                                </li>
+                                <li class="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-5">
+                                    <span class="font-bold italic text-[#FFE600] w-44 shrink-0 flex items-center">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-[#FFE600] mr-2.5"></span>Financial Wealth
+                                    </span>
+                                    <span class="text-gray-100">재정적 풍요와 자유</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Representative Signature -->
+                        <div class="pt-10 mt-8 border-t border-white/10 flex items-center justify-end">
+                            <p class="font-serif-kr text-lg sm:text-xl font-bold tracking-[0.28em] text-[#FFE600]">
+                                대표이사 이 용 헌
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Right Portrait Image Panel (KakaoTalk_20260928_110949318_2.jpg with KakaoTalk_20260928_110949318.jpg fallback) -->
+                    <div class="lg:col-span-5 relative bg-[#E7DFD3] min-h-[380px] sm:min-h-[440px] flex items-center justify-center overflow-hidden">
+                        <!-- Vertical Torn Paper Divider (Desktop) -->
+                        <svg class="hidden lg:block absolute left-0 top-0 bottom-0 h-full w-10 -ml-1 z-20" viewBox="0 0 40 400" preserveAspectRatio="none">
+                            <path d="M0 0 H14 L10 28 L18 55 L11 88 L20 120 L12 155 L22 190 L13 228 L19 262 L10 298 L18 335 L12 370 L16 400 H0 Z" fill="#0D0F0E"/>
+                            <path d="M14 0 H26 L21 30 L29 58 L22 90 L30 124 L23 158 L31 192 L24 230 L28 265 L20 300 L27 338 L22 372 L25 400 H16 L12 370 L18 335 L10 298 L19 262 L13 228 L22 190 L12 155 L20 120 L11 88 L18 55 L10 28 Z" fill="#F4F1EA"/>
+                        </svg>
+
+                        <!-- Uploaded Representative Portrait Image -->
+                        <img id="ceo-portrait-img" src="KakaoTalk_20260928_110949318_2.jpg" alt="GW Partners 이용헌 대표이사 수채화 초상화" class="w-full h-full object-cover object-center relative z-10" onerror="this.onerror=null; this.src='KakaoTalk_20260928_110949318.jpg'; this.onerror=function(){ this.style.display='none'; document.getElementById('ceo-fallback-svg').classList.remove('hidden'); };">
+
+                        <!-- Backup SVG Portrait if local file is missing -->
+                        <svg id="ceo-fallback-svg" class="hidden w-full h-full max-h-[440px] object-cover relative z-10" viewBox="0 0 420 420" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="이용헌 대표이사 수채화 초상 일러스트">
+                            <defs>
+                                <radialGradient id="paperWash" cx="50%" cy="45%" r="65%">
+                                    <stop offset="0%" stop-color="#F5EFE6"/>
+                                    <stop offset="65%" stop-color="#E5DDD0"/>
+                                    <stop offset="100%" stop-color="#D4C9B8"/>
+                                </radialGradient>
+                                <linearGradient id="coatWash" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" stop-color="#3E362E"/>
+                                    <stop offset="55%" stop-color="#56493C"/>
+                                    <stop offset="100%" stop-color="#2D2722"/>
+                                </linearGradient>
+                                <linearGradient id="skinWash" x1="20%" y1="10%" x2="85%" y2="90%">
+                                    <stop offset="0%" stop-color="#E8C9B5"/>
+                                    <stop offset="50%" stop-color="#D7AF98"/>
+                                    <stop offset="100%" stop-color="#B98E77"/>
+                                </linearGradient>
+                            </defs>
+                            <rect width="420" height="420" fill="url(#paperWash)"/>
+                            <path d="M18 145 L62 110 L74 128 L128 72 L145 92 L222 14" stroke="#B6853C" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" opacity="0.82"/>
+                            <circle cx="290" cy="48" r="14" stroke="#7C5892" stroke-width="2.5" opacity="0.45"/>
+                            <path d="M72 420 C75 345 102 292 145 275 L278 272 C332 288 372 342 385 420 Z" fill="url(#coatWash)" opacity="0.92"/>
+                            <path d="M166 266 L202 325 L245 268 L225 256 L178 258 Z" fill="#F4F1EC"/>
+                            <path d="M145 142 C145 96 178 72 222 76 C264 80 286 112 282 158 C279 198 260 236 225 248 C192 258 156 238 148 198 C144 178 145 158 145 142 Z" fill="url(#skinWash)"/>
+                            <rect x="156" y="151" width="36" height="20" rx="5" stroke="#4A423D" stroke-width="2" fill="white" fill-opacity="0.12"/>
+                            <rect x="202" y="151" width="38" height="20" rx="5" stroke="#4A423D" stroke-width="2" fill="white" fill-opacity="0.12"/>
+                            <line x1="192" y1="159" x2="202" y2="159" stroke="#4A423D" stroke-width="2"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <!-- Brand Visual Strip (KakaoTalk_20261107_214756349.jpg Integration) -->
+                <div class="rounded-3xl overflow-hidden bg-white border border-forest-900/10 shadow-lg p-6 sm:p-8">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="px-3 py-1 rounded-full bg-gold-100 text-gold-600 text-xs font-bold">BRAND IDENTITY & LINEUP</span>
+                            <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold text-forest-900">
+                                건강한 이너뷰티와 토털 웰니스의 연결
+                            </h3>
+                            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                                GW Partners는 시그니처 <strong>'아침엔 톡톡'</strong>을 시작으로 장 생태계 과학 기반의 건강기능식품과 이너뷰티 케어 라인업을 통해 신체 안팎의 자생적 아름다움과 풍요로운 삶을 완성합니다.
+                            </p>
+                            <div class="flex flex-wrap gap-2 pt-2">
+                                <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 font-bold text-xs">#아침엔톡톡</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 font-bold text-xs">#스탠포드MACs</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 font-bold text-xs">#한국식맥식단</span>
+                                <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 font-bold text-xs">#이너뷰티스킨케어</span>
+                            </div>
+                        </div>
+
+                        <div class="lg:col-span-5">
+                            <div class="rounded-2xl overflow-hidden border border-gray-200 shadow-md group relative h-60 sm:h-64 bg-forest-950">
+                                <img src="KakaoTalk_20261107_214756349.jpg" alt="GW Partners 브랜드 제품 라인업 연출 이미지" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.style.display='none'; this.nextElementSibling.classList.remove('hidden');">
+                                <div class="hidden absolute inset-0 flex flex-col items-center justify-center bg-forest-900 text-white p-6 text-center space-y-2">
+                                    <i class="fa-solid fa-gem text-gold-400 text-3xl"></i>
+                                    <p class="font-serif-kr text-lg font-bold">GREAT WEALTH PARTNERS</p>
+                                    <p class="text-xs text-gray-300">Wellness & Inner Beauty Solution</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 3. GUT ECOSYSTEM SCIENCE ==================== -->
+        <section id="microbiome" class="py-20 sm:py-28 bg-white border-y border-forest-900/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl mx-auto text-center space-y-4">
+                    <span class="text-xs font-bold tracking-[0.22em] text-forest-800 uppercase">MICROBIOME & LONGEVITY SCIENCE</span>
+                    <h2 class="font-serif-kr text-3xl sm:text-4xl font-bold text-forest-900">
+                        인간은 세포와 미생물로 이루어진<br class="sm:hidden"> <span class="text-gold-600">초유기체(Superorganism)</span>다
+                    </h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        우리 몸의 대장은 단순한 소화 기관이 아니라, 인간 세포와 대등하거나 그 이상으로 존재하는 수십조 미생물이 전신 대사·면역·노화 시계를 지휘하는 <strong>제2의 장기</strong>입니다.
+                    </p>
+                </div>
+
+                <!-- Superorganism 3 Core Numbers -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+                    <div class="p-7 rounded-3xl bg-forest-50/70 border border-forest-900/10 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-user-astronaut"></i>
+                        </div>
+                        <p class="text-xs font-bold text-forest-800 uppercase">HUMAN CELLS · 인간 세포</p>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-forest-950">약 30조 개</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            고유 유전자 약 20,000~25,000개 보유. 신체의 기본 구조를 담당하지만 대사 다양성의 상당 부분은 공생 미생물에 의존합니다.
+                        </p>
+                    </div>
+
+                    <div class="p-7 rounded-3xl bg-forest-900 text-white shadow-xl space-y-3 relative overflow-hidden">
+                        <div class="absolute -right-6 -bottom-6 text-white/5 text-8xl">
+                            <i class="fa-solid fa-bacteria"></i>
+                        </div>
+                        <div class="w-12 h-12 rounded-2xl bg-gold-500 text-forest-950 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-bacterium"></i>
+                        </div>
+                        <p class="text-xs font-bold text-gold-400 uppercase">MICROBIOME · 공생 미생물</p>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-white">약 38조 ~ 39조 개</h3>
+                        <p class="text-xs sm:text-sm text-gray-200 leading-relaxed">
+                            인간 유전자의 100배 이상인 <strong>수백만~수천만 개 유전자</strong>를 보유하여 음식물 분해, 단쇄지방산(SCFA) 합성, 장벽 보호 및 면역 훈련을 수행합니다.
+                        </p>
+                    </div>
+
+                    <div class="p-7 rounded-3xl bg-forest-50/70 border border-forest-900/10 space-y-3">
+                        <div class="w-12 h-12 rounded-2xl bg-forest-900 text-gold-400 flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-network-wired"></i>
+                        </div>
+                        <p class="text-xs font-bold text-forest-800 uppercase">VIROME · 박테리오파지·바이롬</p>
+                        <h3 class="text-2xl sm:text-3xl font-extrabold text-forest-950">약 100조 ~ 1,000조 개</h3>
+                        <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                            박테리오파지(90% 이상)를 중심으로 장내 세균의 과잉 증식을 조절하고 생태계 균형과 면역 조절 신호를 유지하는 정교한 네트워크입니다.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Interactive Science Tabs -->
+                <div class="mt-16 rounded-3xl bg-hanji border border-forest-900/10 p-6 sm:p-10 shadow-sm">
+                    <div class="flex flex-wrap gap-2.5 border-b border-forest-900/10 pb-6" role="tablist">
+                        <button type="button" class="science-tab-btn active px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-forest-900 text-white transition" data-tab="tab-leakygut">
+                            01. 장누수 차단 & 단쇄지방산(SCFA)
+                        </button>
+                        <button type="button" class="science-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-charcoal hover:bg-forest-50 border border-gray-200 transition" data-tab="tab-mitochondria">
+                            02. 미토콘드리아-텔로미어 축
+                        </button>
+                        <button type="button" class="science-tab-btn px-5 py-3 rounded-xl text-xs sm:text-sm font-bold bg-white text-charcoal hover:bg-forest-50 border border-gray-200 transition" data-tab="tab-axis">
+                            03. 장-전신 장기 연결 축
+                        </button>
+                    </div>
+
+                    <!-- Tab 1 Content -->
+                    <div id="tab-leakygut" class="science-tab-panel pt-8 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="px-3 py-1 rounded-full bg-emerald-100 text-emerald-900 text-xs font-bold">GUT BARRIER & METABOLITES</span>
+                            <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold text-forest-900">
+                                장벽 치밀결합(Tight Junction) 강화와<br>핵심 대사산물 단쇄지방산(SCFA)
+                            </h3>
+                            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                                서구화된 초가공식품과 식이섬유 결핍은 장 점막 보호층을 무너뜨려 <strong>장 누수 증후군(Leaky Gut)</strong>을 유발하고, 장내 유해균의 내독소(LPS)가 혈류로 유입되어 전신 만성 염증의 원인이 됩니다.
+                            </p>
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+                                <div class="p-4 rounded-2xl bg-white border border-gray-200/80">
+                                    <p class="font-bold text-forest-900 text-sm">낙산 (Butyrate)</p>
+                                    <p class="text-xs text-gray-600 mt-1">대장 상피세포의 핵심 에너지원, 치밀결합 단백질 강화 및 염증 억제</p>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-white border border-gray-200/80">
+                                    <p class="font-bold text-forest-900 text-sm">프로피온산 (Propionate)</p>
+                                    <p class="text-xs text-gray-600 mt-1">간 내 지방 합성 조절, 포만감 호르몬(GLP-1, PYY) 분비 촉진</p>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-white border border-gray-200/80">
+                                    <p class="font-bold text-forest-900 text-sm">아세트산 (Acetate)</p>
+                                    <p class="text-xs text-gray-600 mt-1">장내 약산성(pH) 환경 조성으로 유해균 증식 억제 및 전신 에너지 순환</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lg:col-span-5">
+                            <div class="p-6 rounded-2xl bg-forest-950 text-white space-y-4">
+                                <h4 class="font-bold text-gold-400 text-sm flex items-center space-x-2">
+                                    <i class="fa-solid fa-shield-virus"></i>
+                                    <span>장벽 방어 메커니즘 요약</span>
+                                </h4>
+                                <div class="space-y-3 text-xs sm:text-sm">
+                                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                                        <p class="font-semibold text-emerald-300">① 점액층(Mucus Layer) 보호</p>
+                                        <p class="text-gray-300 mt-1">MACs 식이섬유가 풍부할 때 미생물이 점막을 갉아먹지 않고 두터운 보호 점액층을 유지합니다.</p>
+                                    </div>
+                                    <div class="p-3.5 rounded-xl bg-white/5 border border-white/10">
+                                        <p class="font-semibold text-gold-300">② 내독소(LPS) 혈관 유입 차단</p>
+                                        <p class="text-gray-300 mt-1">단쇄지방산이 상피세포 간 틈새를 촘촘히 닫아주어 독소 유출과 만성 염증 고리를 끊어냅니다.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2 Content -->
+                    <div id="tab-mitochondria" class="science-tab-panel hidden pt-8 grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                        <div class="lg:col-span-7 space-y-4">
+                            <span class="px-3 py-1 rounded-full bg-amber-100 text-amber-900 text-xs font-bold">CELLULAR ENERGY & AGING CLOCK</span>
+                            <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold text-forest-900">
+                                세포 발전소 '미토콘드리아'와<br>생명 시계 '텔로미어'의 쌍방향 축
+                            </h3>
+                            <p class="text-sm sm:text-base text-gray-700 leading-relaxed">
+                                건강한 장내 미생물이 생성하는 대사산물은 세포 내 에너지 발전소인 <strong>미토콘드리아</strong>의 자가정화(Mitophagy)를 돕고, 염색체 끝단의 노화 타이머인 <strong>텔로미어(Telomere)</strong>의 산화 손상을 방어합니다.
+                            </p>
+                            <ul class="space-y-2.5 text-xs sm:text-sm text-gray-700">
+                                <li class="flex items-start space-x-2.5">
+                                    <i class="fa-solid fa-check-circle text-forest-900 mt-1"></i>
+                                    <span><strong>유로리틴 A (Urolithin A)의 미토파지 유도:</strong> 장내 미생물이 식물성 폴리페놀을 대사해 생성하며, 노화·손상된 미토콘드리아를 선택적으로 청소하고 새 에너지를 재생합니다.</span>
+                                </li>
+                                <li class="flex items-start space-x-2.5">
+                                    <i class="fa-solid fa-check-circle text-forest-900 mt-1"></i>
+                                    <span><strong>인돌-3-프로피온산 (IPA)의 텔로미어 보호:</strong> 트립토판 대사산물로 강력한 항산화 신호를 보내 활성산소(ROS)에 의한 텔로미어 조기 단축을 방어합니다.</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="lg:col-span-5">
+                            <div class="p-6 rounded-2xl bg-forest-950 text-white space-y-4">
+                                <h4 class="font-bold text-gold-400 text-sm">미생물 대사산물 공급 체계의 선순환</h4>
+                                <div class="p-4 rounded-xl bg-white/5 border border-gold-400/30 text-center space-y-2">
+                                    <p class="text-xs text-gold-300 font-semibold">장내 미생물 생태계 복원 (MACs)</p>
+                                    <p class="text-lg font-bold">↓</p>
+                                    <p class="text-xs text-emerald-300 font-semibold">SCFA · 유로리틴 A · 인돌 유도체 생성</p>
+                                    <p class="text-lg font-bold">↓</p>
+                                    <p class="text-sm font-bold text-white">미토콘드리아 활력 + 텔로미어 보호 + 건강 수명 연장</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3 Content -->
+                    <div id="tab-axis" class="science-tab-panel hidden pt-8">
+                        <div class="space-y-6">
+                            <div>
+                                <span class="px-3 py-1 rounded-full bg-sky-100 text-sky-900 text-xs font-bold">GUT-ORGAN AXIS</span>
+                                <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold text-forest-900 mt-2">
+                                    장(腸)에서 시작되는 전신 장기 상호 연결 축
+                                </h3>
+                                <p class="text-sm text-gray-600 mt-1">장내 미생물군집은 미주신경, 면역계, 대사산물을 통해 우리 몸의 주요 장기와 실시간으로 소통합니다.</p>
+                            </div>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                                <div class="p-5 rounded-2xl bg-white border border-gray-200">
+                                    <h4 class="font-bold text-forest-900 flex items-center space-x-2">
+                                        <i class="fa-solid fa-brain text-gold-600"></i>
+                                        <span>장-뇌 축 (Gut-Brain Axis)</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">세로토닌, GABA, 도파민 전구체 생성 및 미주신경 신호 전달을 통해 정서 안정, 수면 질, 인지 활력을 지원합니다.</p>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-white border border-gray-200">
+                                    <h4 class="font-bold text-forest-900 flex items-center space-x-2">
+                                        <i class="fa-solid fa-shield text-gold-600"></i>
+                                        <span>장-면역 축 (Gut-Immune Axis)</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">인체 면역세포의 70% 이상이 집중된 장 점막에서 조절 T세포 균형을 맞추고 과민 면역 반응을 진정시킵니다.</p>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-white border border-gray-200">
+                                    <h4 class="font-bold text-forest-900 flex items-center space-x-2">
+                                        <i class="fa-solid fa-heart-pulse text-gold-600"></i>
+                                        <span>장-심혈관·간 축</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">담즙산 대사와 콜레스테롤 흡착 배출을 통해 간 문맥 독소 부담을 줄이고 혈관 대사 건강을 돕습니다.</p>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-white border border-gray-200">
+                                    <h4 class="font-bold text-forest-900 flex items-center space-x-2">
+                                        <i class="fa-solid fa-fire-flame-curved text-gold-600"></i>
+                                        <span>장-지방·대사 축</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">혈당 스파이크 완화와 인슐린 감수성 개선, 식욕 조절 호르몬 유도로 건강한 체중 관리를 뒷받침합니다.</p>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-white border border-gray-200">
+                                    <h4 class="font-bold text-forest-900 flex items-center space-x-2">
+                                        <i class="fa-solid fa-sparkles text-gold-600"></i>
+                                        <span>장-피부 축 (Gut-Skin Axis)</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">장내 독소 유입 차단과 항산화 식물성 원료의 시너지로 피부 미세 염증을 가라앉히고 맑은 안색을 가꿉니다.</p>
+                                </div>
+                                <div class="p-5 rounded-2xl bg-white border border-gray-200">
+                                    <h4 class="font-bold text-forest-900 flex items-center space-x-2">
+                                        <i class="fa-solid fa-lungs text-gold-600"></i>
+                                        <span>장-폐·신장 축</span>
+                                    </h4>
+                                    <p class="text-xs text-gray-600 mt-2 leading-relaxed">순환하는 단쇄지방산이 점막 면역 전반을 강화하여 호흡기 방어력과 노폐물 대사 균형에 기여합니다.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 4. STANFORD MACs & KOREAN MAC DIET ==================== -->
+        <section id="macs" class="py-20 sm:py-28 hanji-bg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16">
+                <!-- Header -->
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7 space-y-5">
+                        <span class="text-xs font-bold tracking-[0.22em] text-gold-600 uppercase">STANFORD UNIVERSITY SCHOOL OF MEDICINE</span>
+                        <h2 class="font-serif-kr text-3xl sm:text-4xl font-bold text-forest-900 leading-tight">
+                            스탠포드 의대 <span class="text-gold-600">MACs</span> 이론과<br>
+                            한국식 맥식단(Korean MAC Plan)
+                        </h2>
+                        <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                            스탠포드 대학교 의과대학 미생물학·면역학과 <strong>저스틴 손넨버그(Justin Sonnenburg) & 에리카 손넨버그(Erica Sonnenburg)</strong> 박사 연구팀은 현대인의 만성질환과 면역 저하의 핵심 원인이 <strong>MACs(Microbiota-Accessible Carbohydrates, 미생물 접근 가능 탄수화물)</strong> 결핍으로 인한 장내 미생물 종 다양성 멸종에 있음을 규명했습니다.
+                        </p>
+                        <div class="p-5 rounded-2xl bg-white border-l-4 border-forest-900 shadow-sm space-y-2">
+                            <p class="font-bold text-forest-900 text-sm sm:text-base">
+                                "외부 균주(씨앗)만 밀어 넣는 것보다, 미생물이 먹고 자랄 토양(MACs)을 일구는 것이 본질입니다."
+                            </p>
+                            <p class="text-xs sm:text-sm text-gray-600">
+                                황폐해진 장 환경에 단편적인 유산균만 투입하면 정착하지 못하고 대부분 배출됩니다. 위·소장 효소에 분해되지 않고 대장 끝까지 도달하는 복합 식물성 MACs가 공급되어야 수조 마리 공생 미생물이 자생적으로 살아납니다.
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- SCFA Chart -->
+                    <div class="lg:col-span-5">
+                        <div class="rounded-3xl bg-white p-7 sm:p-8 shadow-xl border border-forest-900/10 space-y-6">
+                            <div>
+                                <span class="text-xs font-bold text-forest-800 uppercase">SCFA GENERATION EFFICIENCY</span>
+                                <h3 class="font-serif-kr text-xl font-bold text-forest-900 mt-1">식단별 단쇄지방산(SCFA) 생성 효율 비교</h3>
+                                <p class="text-xs text-gray-500 mt-1">MAC 식단 섭취 시 일반 식단 대비 단쇄지방산 생성 효율 최대 3배 이상 증대</p>
+                            </div>
+
+                            <div class="space-y-5">
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-semibold text-gray-600 mb-1.5">
+                                        <span>일반 서구식 식단 (초가공식품 위주)</span>
+                                        <span>30%</span>
+                                    </div>
+                                    <div class="w-full h-4 bg-gray-100 rounded-full overflow-hidden">
+                                        <div class="scfa-bar h-full bg-slate-400 rounded-full" style="width: 30%;"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-semibold text-gray-700 mb-1.5">
+                                        <span>일반 불용성 식이섬유 단일 섭취</span>
+                                        <span>50%</span>
+                                    </div>
+                                    <div class="w-full h-4 bg-gray-100 rounded-full overflow-hidden">
+                                        <div class="scfa-bar h-full bg-sky-500 rounded-full" style="width: 50%;"></div>
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <div class="flex justify-between text-xs sm:text-sm font-bold text-forest-900 mb-1.5">
+                                        <span>한국식 MAC 식단 (복합 식물성 맥플랜)</span>
+                                        <span class="text-emerald-700">95% (최대 3배↑)</span>
+                                    </div>
+                                    <div class="w-full h-5 bg-forest-50 rounded-full overflow-hidden border border-forest-900/15">
+                                        <div class="scfa-bar h-full bg-gradient-to-r from-forest-900 to-emerald-600 rounded-full" style="width: 95%;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="pt-4 border-t border-gray-100 text-xs text-gray-500 leading-relaxed">
+                                * 출처: Sonnenburg Lab(Stanford Univ.) MACs 연구 개념 및 복합 식물성 다당류 발효 대사 데이터 기반
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Donguibogam Gun-Sin-Jwa-Sa 4-Step Harmony -->
+                <div class="rounded-3xl bg-forest-950 text-white p-8 sm:p-12 shadow-2xl space-y-8">
+                    <div class="max-w-3xl">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gold-400 uppercase">DONGUIBOGAM × KOREAN MAC PLAN</span>
+                        <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold mt-2">
+                            《동의보감》 군신좌사(君臣佐使) 원리로 완성한 한국식 맥식단
+                        </h3>
+                        <p class="text-gray-300 text-sm sm:text-base mt-2">
+                            식품공학적 정제 부형제를 최소화하고, 한국인의 장 환경에 최적화된 자연 원물과 토종 발효의 조화로운 4단계 메커니즘을 설계했습니다.
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-gold-500/20 text-gold-300 text-xs font-bold">01 · 비움 & 정화 (淸熱·利水)</span>
+                            <h4 class="text-lg font-bold text-white">줄풀 · 조릿대 · 차전자피</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                인간 소화효소에 깨지지 않는 거친 식물성 섬유질 그물망이 장내 묵은 습열(濕熱)과 노폐물을 흡착해 시원하게 배출합니다.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-gold-500/20 text-gold-300 text-xs font-bold">02 · 기운 소통 (理氣調滯)</span>
+                            <h4 class="text-lg font-bold text-white">광귤나무 (지실·지각)</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                정체된 장관의 기체(氣滯)를 풀어주고 둔해진 장 근육의 자연스러운 연동 운동 리듬을 깨워줍니다.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-gold-500/20 text-gold-300 text-xs font-bold">03 · 윤활 & 진액 (潤腸·生津)</span>
+                            <h4 class="text-lg font-bold text-white">햄프씨드 · 칡뿌리(갈근)</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                건조해진 장 점막에 촉촉한 진액과 수용성 보호 겔을 공급하여 장벽 손상을 감싸고 부드러운 순환을 돕습니다.
+                            </p>
+                        </div>
+
+                        <div class="p-6 rounded-2xl bg-white/5 border border-white/10 space-y-3">
+                            <span class="inline-block px-3 py-1 rounded-lg bg-gold-500/20 text-gold-300 text-xs font-bold">04 · 영양 토양 (健脾·發酵)</span>
+                            <h4 class="text-lg font-bold text-white">귀리 · 발효곡물 · L.brevis</h4>
+                            <p class="text-xs text-gray-300 leading-relaxed">
+                                비위 기운을 보강하고 한국인 장에 특화된 유산균 발효 환경(미생물 밥상)을 조성하여 단쇄지방산 생성을 극대화합니다.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 5. SIGNATURE PRODUCT GALLERY & DETAILS ==================== -->
+        <section id="product" class="py-20 sm:py-28 bg-white border-t border-forest-900/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-20">
+                <!-- Section Header -->
+                <div class="text-center max-w-3xl mx-auto space-y-3">
+                    <span class="text-xs font-bold tracking-[0.22em] text-gold-600 uppercase">SIGNATURE PRODUCT SHOWCASE</span>
+                    <h2 class="font-serif-kr text-3xl sm:text-4xl font-bold text-forest-900">
+                        편안하고 균형 잡힌 장 건강 솔루션,<br>
+                        <span class="text-gold-600">아침엔 톡톡</span> (Good Morning Talk Talk)
+                    </h2>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed">
+                        1포(5.5g)당 <strong>차전자피분말 4,400mg</strong> 중심의 23가지 프리미엄 원료 배합. 아래 사진을 클릭하여 실제 실물 패키지와 정교한 제품 형태를 확인해 보세요.
+                    </p>
+                </div>
+
+                <!-- Featured Interactive Product Photo Gallery -->
+                <div class="rounded-3xl bg-gradient-to-br from-forest-50 via-hanji to-gold-100/40 border border-forest-900/15 p-6 sm:p-10 shadow-xl">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <!-- Left Main Image Showcase with Lightbox Trigger -->
+                        <div class="lg:col-span-7 space-y-4">
+                            <div class="relative rounded-2xl overflow-hidden border border-gray-200 shadow-2xl bg-forest-950 h-80 sm:h-[420px] group cursor-pointer" id="main-photo-wrapper">
+                                <img id="main-product-img" src="images.jfif" alt="GW Partners 아침엔 톡톡 대표 실물 제품 사진" class="w-full h-full object-cover object-center group-hover:scale-105 transition duration-500" onerror="this.onerror=null; this.src='jIMII1768371701.jpg';">
+                                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60"></div>
+                                <div class="absolute bottom-4 left-5 right-5 flex items-center justify-between text-white">
+                                    <div>
+                                        <p id="main-photo-title" class="font-bold text-lg text-gold-300">실물 패키지 (30포 · 15포 구성)</p>
+                                        <p id="main-photo-sub" class="text-xs text-gray-300">차전자피분말 4,400mg/포 · (주)한미양행 제조</p>
+                                    </div>
+                                    <button type="button" id="lightbox-trigger-btn" class="px-3.5 py-2 rounded-xl bg-white/20 backdrop-blur-md hover:bg-white/30 text-xs font-semibold text-white border border-white/30 transition flex items-center space-x-1.5">
+                                        <i class="fa-solid fa-expand"></i>
+                                        <span>큰 사진 보기</span>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Thumbnails Selectors (Integrating all user provided images) -->
+                            <div class="grid grid-cols-3 gap-3" id="photo-thumbnails">
+                                <button type="button" class="photo-thumb thumb-active rounded-xl overflow-hidden border-2 border-transparent bg-forest-900 h-20 sm:h-24 transition relative" data-img="images.jfif" data-title="실물 패키지 (30포 · 15포 구성)" data-sub="차전자피분말 4,400mg/포 · (주)한미양행 제조">
+                                    <img src="images.jfif" alt="30포 및 15포 박스 컷" class="w-full h-full object-cover" onerror="this.src='jIMII1768371701.jpg';">
+                                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/60 text-[10px] text-white">실물 컷</span>
+                                </button>
+                                <button type="button" class="photo-thumb rounded-xl overflow-hidden border-2 border-transparent bg-forest-900 h-20 sm:h-24 transition relative" data-img="jIMII1768371701.jpg" data-title="스틱포 & 박스 플랫레이 연출" data-sub="개별 5.5g 스틱포 패키지와 위생적 세로포장">
+                                    <img src="jIMII1768371701.jpg" alt="스틱포 펼침 컷" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/60 text-[10px] text-white">스틱포 컷</span>
+                                </button>
+                                <button type="button" class="photo-thumb rounded-xl overflow-hidden border-2 border-transparent bg-forest-900 h-20 sm:h-24 transition relative" data-img="KakaoTalk_20261108_103417921.png" data-title="브랜드 질감 아트 일러스트" data-sub="Good Morning Talk Talk 패키지 질감 비주얼">
+                                    <img src="KakaoTalk_20261108_103417921.png" alt="질감 아트 패키지 컷" class="w-full h-full object-cover">
+                                    <span class="absolute bottom-1 right-1 px-1.5 py-0.5 rounded bg-black/60 text-[10px] text-white">아트 컷</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <!-- Right Specs & Highlights -->
+                        <div class="lg:col-span-5 space-y-6">
+                            <div class="space-y-2">
+                                <span class="px-3 py-1 rounded-full bg-forest-900 text-gold-300 text-xs font-bold">SPECIFICATION & FORMULA</span>
+                                <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold text-forest-900">아침엔 톡톡 스펙 요약</h3>
+                                <p class="text-xs sm:text-sm text-gray-600 leading-relaxed">
+                                    물과 함께 섭취 시 식이섬유가 수분을 머금어 부드러운 장내 정화 작용을 수행합니다.
+                                </p>
+                            </div>
+
+                            <div class="space-y-3 text-sm">
+                                <div class="p-4 rounded-2xl bg-white border border-forest-900/10 flex items-center justify-between">
+                                    <span class="font-bold text-gray-700">1포 핵심 함량</span>
+                                    <span class="font-extrabold text-forest-900 text-base">차전자피분말 4,400mg</span>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-white border border-forest-900/10 flex items-center justify-between">
+                                    <span class="font-bold text-gray-700">포장 규격 및 섭취</span>
+                                    <span class="font-extrabold text-forest-900 text-base">1일 1회, 1회 1포 (5.5g)</span>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-white border border-forest-900/10 flex items-center justify-between">
+                                    <span class="font-bold text-gray-700">구성 라인업</span>
+                                    <span class="font-semibold text-forest-900">15포(15일분) / 30포(1개월분)</span>
+                                </div>
+                                <div class="p-4 rounded-2xl bg-white border border-forest-900/10 flex items-center justify-between">
+                                    <span class="font-bold text-gray-700">제조 시설</span>
+                                    <span class="font-semibold text-blue-900">(주)한미양행 · GMP/HACCP</span>
+                                </div>
+                            </div>
+
+                            <div class="p-4 rounded-2xl bg-forest-900 text-white text-xs leading-relaxed space-y-1">
+                                <p class="font-bold text-gold-300"><i class="fa-solid fa-droplet mr-1"></i> 올바른 섭취 팁</p>
+                                <p class="text-gray-200">
+                                    1포 섭취 시 미지근하거나 따뜻한 물(250ml 이상)을 충분히 함께 마셔주시면, 수용성·불용성 식이섬유가 팽창하여 최적의 장내 겔화 및 정화 환경을 형성합니다.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3-Stage Body Transformation Timeline -->
+                <div class="space-y-8">
+                    <div class="text-center max-w-3xl mx-auto">
+                        <span class="text-xs font-bold tracking-[0.2em] text-gold-600 uppercase">3-STAGE TRANSFORMATION TIMELINE</span>
+                        <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold text-forest-900 mt-2">
+                            장 생태계 복원에 따른 3단계 인체 변화 타임라인
+                        </h3>
+                        <p class="text-sm text-gray-600 mt-2">단계를 선택하시면 과학적 작용 기전과 주요 체감 변화를 확인하실 수 있습니다.</p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-4" id="timeline-buttons">
+                        <button type="button" class="timeline-btn active text-left p-6 rounded-2xl bg-forest-900 text-white shadow-lg border-2 border-forest-900 transition" data-stage="1">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-gold-500 text-forest-950">1단계 · 1~2주 차</span>
+                                <i class="fa-solid fa-broom text-gold-400"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-3">노폐물 흡착 및 배출</h4>
+                            <p class="text-xs text-gray-300 mt-1">대량 식이섬유 물리적 팽창 및 숙변·가스 배출</p>
+                        </button>
+
+                        <button type="button" class="timeline-btn text-left p-6 rounded-2xl bg-hanji text-charcoal hover:bg-forest-50 border-2 border-gray-200 transition" data-stage="2">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-forest-100 text-forest-900">2단계 · 3~4주 차</span>
+                                <i class="fa-solid fa-shield-heart text-forest-800"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-3">유익균 정착 및 장벽 회복</h4>
+                            <p class="text-xs text-gray-600 mt-1">17종 유산균 우점화 및 장벽 치밀결합 강화</p>
+                        </button>
+
+                        <button type="button" class="timeline-btn text-left p-6 rounded-2xl bg-hanji text-charcoal hover:bg-forest-50 border-2 border-gray-200 transition" data-stage="3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-forest-100 text-forest-900">3단계 · 2~3개월 차</span>
+                                <i class="fa-solid fa-arrows-spin text-forest-800"></i>
+                            </div>
+                            <h4 class="text-lg font-bold mt-3">전신 대사 순환 및 체질 변화</h4>
+                            <p class="text-xs text-gray-600 mt-1">장-뇌·지방·피부 축 활성화 및 지질 대사 안정</p>
+                        </button>
+                    </div>
+
+                    <!-- Dynamic Timeline Detail Card -->
+                    <div id="timeline-detail-card" class="rounded-3xl bg-forest-50/80 border border-forest-900/15 p-7 sm:p-10 transition-all">
+                        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                            <div class="lg:col-span-8 space-y-4">
+                                <span id="stage-badge" class="inline-block px-3.5 py-1 rounded-full bg-forest-900 text-gold-300 text-xs font-bold">STAGE 01 · 1~2주 차 집중 정화기</span>
+                                <h4 id="stage-title" class="font-serif-kr text-2xl font-bold text-forest-900">핵심 원료에 의한 대량 식이섬유 흡착 및 배출</h4>
+                                <div class="space-y-3 text-sm sm:text-base text-gray-700 leading-relaxed">
+                                    <p id="stage-mechanism"><strong>• 과학적 기전:</strong> 초고함량 차전자피분말(4,400mg)과 난소화성말토덱스트린, 귀리식이섬유, 줄풀·조릿대가 수분을 흡수해 물리적으로 팽창하며 장관 내 묵은 숙변, 습열, 가스를 흡착하여 배출합니다.</p>
+                                    <p id="stage-feeling"><strong>• 주요 체감 변화:</strong> 복부 팽만감 감소, 규칙적인 배변 리듬 확보, 아침마다 몸이 가벼워지는 상쾌함을 경험합니다.</p>
+                                </div>
+                            </div>
+                            <div class="lg:col-span-4 bg-white rounded-2xl p-6 border border-forest-900/10 space-y-3">
+                                <p class="text-xs font-bold text-forest-800 uppercase">KEY SYNERGY INGREDIENTS</p>
+                                <div id="stage-tags" class="flex flex-wrap gap-2">
+                                    <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 text-xs font-bold">차전자피분말 4,400mg</span>
+                                    <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 text-xs font-bold">난소화성말토덱스트린</span>
+                                    <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 text-xs font-bold">귀리식이섬유</span>
+                                    <span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 text-xs font-bold">줄풀 · 조릿대</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 23 Core Ingredients Directory with Search & Filter -->
+                <div class="space-y-8">
+                    <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-gray-200 pb-6">
+                        <div>
+                            <span class="text-xs font-bold tracking-[0.2em] text-forest-800 uppercase">NUTRITION & HEALTH INGREDIENTS GUIDE</span>
+                            <h3 class="font-serif-kr text-2xl sm:text-3xl font-bold text-forest-900 mt-1">
+                                주요 성분 및 기능성 정보 (1번 ~ 23번 전 원료)
+                            </h3>
+                            <p class="text-xs sm:text-sm text-gray-600 mt-1">원료명 또는 건강 키워드(예: 변비, 혈당, 콜레스테롤, 유산균, 피부, 간)로 검색해 보세요.</p>
+                        </div>
+
+                        <!-- Search Box -->
+                        <div class="w-full md:w-80 relative">
+                            <input type="text" id="ingredient-search" placeholder="원료명 또는 기능 검색..." class="w-full pl-10 pr-4 py-3 rounded-xl border border-gray-300 text-sm focus:outline-none focus:border-forest-900 bg-hanji/50">
+                            <i class="fa-solid fa-magnifying-glass text-gray-400 absolute left-3.5 top-3.5 text-sm"></i>
+                        </div>
+                    </div>
+
+                    <!-- Filter Pills -->
+                    <div class="flex flex-wrap gap-2" id="ingredient-filters">
+                        <button type="button" class="filter-pill active px-4 py-2 rounded-full text-xs font-bold bg-forest-900 text-white transition" data-filter="all">전체 23종 보기</button>
+                        <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold bg-hanji text-charcoal hover:bg-forest-50 border border-gray-200 transition" data-filter="장 건강">장 건강 · 배변</button>
+                        <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold bg-hanji text-charcoal hover:bg-forest-50 border border-gray-200 transition" data-filter="혈당">혈당 · 콜레스테롤</button>
+                        <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold bg-hanji text-charcoal hover:bg-forest-50 border border-gray-200 transition" data-filter="체중">체중 · 체지방 관리</button>
+                        <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold bg-hanji text-charcoal hover:bg-forest-50 border border-gray-200 transition" data-filter="면역">면역 · 항염 · 항산화</button>
+                        <button type="button" class="filter-pill px-4 py-2 rounded-full text-xs font-bold bg-hanji text-charcoal hover:bg-forest-50 border border-gray-200 transition" data-filter="피부">피부 · 순환 · 활력</button>
+                    </div>
+
+                    <!-- Ingredients Grid (Rendered Dynamically via JS) -->
+                    <div id="ingredients-grid" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    </div>
+                </div>
+
+                <!-- Initial Cleansing Response (명현) Guide -->
+                <div class="rounded-3xl bg-hanji border border-gold-500/30 p-7 sm:p-10 space-y-6">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                        <div>
+                            <span class="text-xs font-bold tracking-wider text-gold-600 uppercase">CLEANSING & ADAPTATION GUIDE</span>
+                            <h3 class="font-serif-kr text-2xl font-bold text-forest-900 mt-1">
+                                섭취 초기 정화 반응(명현)의 과학적 해석 및 실천 수칙
+                            </h3>
+                        </div>
+                        <span class="self-start sm:self-center px-3.5 py-1.5 rounded-full bg-white border border-gray-200 text-xs font-semibold text-gray-700">안심 섭취 가이드</span>
+                    </div>
+
+                    <div class="space-y-3" id="cleansing-accordion">
+                        <!-- Q1 -->
+                        <div class="rounded-2xl bg-white border border-gray-200 overflow-hidden">
+                            <button type="button" class="accordion-btn w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm sm:text-base text-forest-900">
+                                <span>Q1. 섭취 초기 체중이 일시적으로 1~2kg 늘어나는 이유는 무엇인가요?</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-gold-600 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content px-6 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
+                                <p><strong>지방 증가가 아닌 물리적 수분 흡수 현상입니다.</strong> 핵심 원료인 차전자피와 귀리의 수용성 식이섬유는 자기 무게의 <strong>40~50배에 달하는 수분을 흡수해 겔(Gel)화</strong>되면서 장내에 묵어 있던 건조한 숙변과 노폐물을 부드럽게 불립니다. 이 과정에서 일시적으로 체수분 수치가 올라갈 수 있으나, 노폐물이 배출되고 나면 이전보다 훨씬 가볍고 슬림한 상태로 돌아갑니다.</p>
+                            </div>
+                        </div>
+
+                        <!-- Q2 -->
+                        <div class="rounded-2xl bg-white border border-gray-200 overflow-hidden">
+                            <button type="button" class="accordion-btn w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm sm:text-base text-forest-900">
+                                <span>Q2. 복부 팽만감이나 가스, 묵직한 느낌이 나타날 수 있나요?</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-gold-600 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content hidden px-6 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3">
+                                <p><strong>유익균 발효 시작과 장 근육 연동 운동 재개의 자연스러운 신호입니다.</strong> 장내 유익균이 고섬유질(MACs)을 분해·발효하는 과정에서 일시적인 가스가 생성되고, 광귤나무·줄풀 성분이 둔해져 있던 장 연동 운동을 깨우면서 묵직함을 느낄 수 있습니다. 장 생태계가 균형을 찾는 <strong>3일~2주 이내에 자연스럽게 가라앉습니다.</strong></p>
+                            </div>
+                        </div>
+
+                        <!-- Q3 -->
+                        <div class="rounded-2xl bg-white border border-gray-200 overflow-hidden">
+                            <button type="button" class="accordion-btn w-full px-6 py-4 text-left flex items-center justify-between font-bold text-sm sm:text-base text-forest-900">
+                                <span>Q3. 정화 기간을 가장 편안하게 넘기는 3가지 실천 수칙</span>
+                                <i class="fa-solid fa-chevron-down text-xs text-gold-600 transition-transform"></i>
+                            </button>
+                            <div class="accordion-content hidden px-6 pb-5 text-xs sm:text-sm text-gray-700 leading-relaxed border-t border-gray-100 pt-3 space-y-1.5">
+                                <p><strong>1. 따뜻한 물 충분히 마시기:</strong> 식이섬유가 수분을 충분히 머금어야 통증 없이 부드럽게 노폐물을 밀어낼 수 있습니다. (미지근하거나 따뜻한 물 권장)</p>
+                                <p><strong>2. 복부 온찜질 및 마사지:</strong> 아랫배를 따뜻하게 유지하면 장 근육의 긴장과 가스 정체가 수월하게 풀어집니다.</p>
+                                <p><strong>3. 섭취량 단계적 조절:</strong> 초기 반응이 다소 크게 느껴질 경우 며칠간 섭취량을 절반(1/2포)으로 줄여 장이 적응할 시간을 준 뒤 다시 정량(1포)으로 올리시면 좋습니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ==================== 6. MANUFACTURER: HANMI NUTRITION ==================== -->
+        <section id="manufacturer" class="py-20 sm:py-28 hanji-bg border-t border-forest-900/10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-3xl bg-white border border-forest-900/10 p-8 sm:p-12 shadow-lg">
+                    <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                        <div class="lg:col-span-7 space-y-5">
+                            <div class="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-blue-50 text-blue-900 text-xs font-bold">
+                                <span>OFFICIAL MANUFACTURING PARTNER</span>
+                                <span>·</span>
+                                <span>SINCE 1967</span>
+                            </div>
+                            <h2 class="font-serif-kr text-3xl sm:text-4xl font-bold text-forest-900">
+                                50년 이상 축적된 제조 명가,<br>
+                                <span class="text-blue-800">주식회사 한미양행</span> 책임 제조
+                            </h2>
+                            <p class="text-gray-700 text-sm sm:text-base leading-relaxed">
+                                '아침엔 톡톡'은 1967년 설립되어 대한민국 건강기능식품 역사와 함께해 온 최장수 전문 제조기업 <strong>주식회사 한미양행(Hanmi Nutrition Inc.)</strong>의 엄격한 품질 시스템 아래 생산됩니다.
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                                    <p class="font-bold text-forest-900 text-sm flex items-center space-x-2">
+                                        <i class="fa-solid fa-award text-blue-700"></i>
+                                        <span>국내 최초 HACCP & GMP 동시 인증</span>
+                                    </p>
+                                    <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+                                        건강보조식품 및 특수영양식품 분야에서 위해요소중점관리기준(HACCP)과 우수건강기능식품제조기준(GMP)을 동시에 획득했습니다.
+                                    </p>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-slate-50 border border-slate-200/80">
+                                    <p class="font-bold text-forest-900 text-sm flex items-center space-x-2">
+                                        <i class="fa-solid fa-industry text-blue-700"></i>
+                                        <span>연 매출 1,000억 달성 최장수 건기식 기업</span>
+                                    </p>
+                                    <p class="text-xs text-gray-600 mt-1.5 leading-relaxed">
+                                        50년 이상의 R&D 노하우와 최신 자동화 생산 설비로 원료 선별부터 완제품 출고까지 철저하게 검증합니다.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <p class="text-xs text-gray-500 pt-1">
+                                • 본사 및 공장: 경기도 파주시 문산읍 통일로1888번길 44-20 (대표이사: 정명수) | ※ '한미약품(한미그룹)'과는 사명이 유사하나 별개의 건강기능식품 전문 기업입니다.
+                            </p>
+                        </div>
+
+                        <!-- Right Certification Visual Card -->
+                        <div class="lg:col-span-5">
+                            <div class="rounded-3xl bg-gradient-to-br from-slate-900 to-blue-950 text-white p-8 space-y-6 shadow-xl">
+                                <div class="flex items-center justify-between border-b border-white/15 pb-5">
+                                    <div>
+                                        <p class="text-xs text-sky-300 font-semibold">HANMI NATURAL NUTRITION</p>
+                                        <h3 class="text-2xl font-bold mt-1">(주)한미양행</h3>
+                                    </div>
+                                    <div class="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center text-sky-300 text-xl">
+                                        <i class="fa-solid fa-certificate"></i>
+                                    </div>
+                                </div>
+
+                                <div class="grid grid-cols-2 gap-4 text-center">
+                                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <p class="text-2xl font-extrabold text-sky-300">1967</p>
+                                        <p class="text-xs text-gray-300 mt-1">설립 연도</p>
+                                    </div>
+                                    <div class="p-4 rounded-2xl bg-white/5 border border-white/10">
+                                        <p class="text-2xl font-extrabold text-emerald-300">GMP·HACCP</p>
+                                        <p class="text-xs text-gray-300 mt-1">국내 최초 동시 인증</p>
+                                    </div>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white/5 border border-white/10 text-xs text-gray-200 leading-relaxed">
+                                    영문 이니셜 <strong>'H'</strong>와 자연을 상징하는 <strong>'푸른 새싹'</strong>의 기업 정신처럼, 싱그럽고 순수한 자연 원물의 생명력을 안전하게 담아냅니다.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ==================== LIGHTBOX MODAL FOR PRODUCT PHOTOS ==================== -->
+    <div id="lightbox-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-md hidden flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full bg-forest-950 rounded-3xl overflow-hidden border border-gold-500/30 text-white p-6 space-y-4">
+            <button type="button" id="lightbox-close-btn" class="absolute top-4 right-4 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center text-lg z-10 transition">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div class="h-[60vh] max-h-[500px] w-full rounded-2xl overflow-hidden bg-black flex items-center justify-center">
+                <img id="lightbox-img" src="" alt="제품 이미지 확대보기" class="w-full h-full object-contain">
+            </div>
+            <div>
+                <h4 id="lightbox-title" class="text-xl font-bold text-gold-300"></h4>
+                <p id="lightbox-sub" class="text-xs text-gray-300 mt-1"></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="bg-charcoal text-gray-400 py-14 border-t border-white/10 text-xs sm:text-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-6 pb-8 border-b border-white/10">
+                <div>
+                    <!-- Footer Signature Logo (White Text Version) -->
+                    <svg class="h-11 w-auto" viewBox="0 0 230 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M26.5 14.5C23.8 11.8 20.1 10.3 15.8 10.3C8.2 10.3 2.5 16.1 2.5 24C2.5 31.9 8.2 37.7 15.8 37.7C22.4 37.7 27.3 33.4 27.8 26.8H16.2V23.4H31.5V25.5C31.5 34.8 24.9 41.2 15.8 41.2C6.1 41.2 -1 33.8 -1 24C-1 14.2 6.1 6.8 15.8 6.8C21.2 6.8 25.8 8.8 29.1 12.2L26.5 14.5Z" transform="translate(3, 0)" fill="#FFFFFF"/>
+                        <path d="M38 7.5L47.5 36.2L54.8 14.5H57.8L48.8 40.8H46L34.2 7.5H38Z" fill="#FFFFFF"/>
+                        <path d="M55.2 14.5L63.5 36.2L75.5 3.5L77.2 4.1L64.8 40.8H62L52.2 14.5H55.2Z" fill="#C5A059"/>
+                        <text x="80" y="34" fill="#FFFFFF" font-family="Pretendard, sans-serif" font-weight="500" font-size="27" letter-spacing="-0.02em">Partners</text>
+                        <text x="58" y="51" fill="#D1D5DB" font-family="Pretendard, sans-serif" font-weight="500" font-size="12.5" letter-spacing="0.06em">Great Wealth</text>
+                    </svg>
+                    <p class="text-xs text-gray-400 mt-2">Well-aging · Inner Beauty · Financial Wealth</p>
+                </div>
+
+                <div class="flex flex-wrap gap-6 text-xs text-gray-300">
+                    <a href="#vision" class="hover:text-gold-400 transition">기업 비전</a>
+                    <a href="#microbiome" class="hover:text-gold-400 transition">장 생태계 과학</a>
+                    <a href="#macs" class="hover:text-gold-400 transition">스탠포드 MACs</a>
+                    <a href="#product" class="hover:text-gold-400 transition">아침엔 톡톡</a>
+                    <a href="#manufacturer" class="hover:text-gold-400 transition">(주)한미양행</a>
+                </div>
+            </div>
+
+            <div class="space-y-2 text-xs text-gray-500 leading-relaxed">
+                <p><strong class="text-gray-300">회사명:</strong> 주식회사 지더블유파트너스 (GW Partners / GWP CO., LTD.) | <strong class="text-gray-300">대표이사:</strong> 이용헌</p>
+                <p><strong class="text-gray-300">제조원:</strong> 주식회사 한미양행 (경기도 파주시 문산읍 통일로1888번길 44-20)</p>
+                <p class="pt-2 text-gray-500">
+                    ※ 본 홈페이지에 소개된 스탠포드 대학교 의과대학 MACs 및 마이크로바이옴 학술 정보는 장 생태계와 식이섬유의 과학적 이해를 돕기 위한 건강 정보이며, '아침엔 톡톡'은 질병의 예방 및 치료를 위한 의약품이 아닙니다.
+                </p>
+                <p class="pt-2 text-gray-600">© 2026 GW Partners (GWP CO., LTD.). All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ==================== JAVASCRIPT LOGIC ==================== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // 1. Mobile Menu Drawer
+            const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-nav-link');
+
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            mobileLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    mobileMenu.classList.add('hidden');
+                });
+            });
+
+            // 2. Science Tabs Interactivity
+            const scienceTabBtns = document.querySelectorAll('.science-tab-btn');
+            const scienceTabPanels = document.querySelectorAll('.science-tab-panel');
+
+            scienceTabBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const targetId = btn.getAttribute('data-tab');
+
+                    scienceTabBtns.forEach(b => {
+                        b.classList.remove('bg-forest-900', 'text-white');
+                        b.classList.add('bg-white', 'text-charcoal', 'border', 'border-gray-200');
+                    });
+                    btn.classList.add('bg-forest-900', 'text-white');
+                    btn.classList.remove('bg-white', 'text-charcoal', 'border', 'border-gray-200');
+
+                    scienceTabPanels.forEach(panel => {
+                        panel.classList.add('hidden');
+                        panel.classList.remove('grid');
+                    });
+
+                    const targetPanel = document.getElementById(targetId);
+                    targetPanel.classList.remove('hidden');
+                    if (targetId !== 'tab-axis') {
+                        targetPanel.classList.add('grid');
+                    }
+                });
+            });
+
+            // 3. Product Gallery Switcher & Lightbox
+            const mainImg = document.getElementById('main-product-img');
+            const mainTitle = document.getElementById('main-photo-title');
+            const mainSub = document.getElementById('main-photo-sub');
+            const thumbs = document.querySelectorAll('.photo-thumb');
+            const lightboxModal = document.getElementById('lightbox-modal');
+            const lightboxImg = document.getElementById('lightbox-img');
+            const lightboxTitle = document.getElementById('lightbox-title');
+            const lightboxSub = document.getElementById('lightbox-sub');
+            const lightboxTrigger = document.getElementById('lightbox-trigger-btn');
+            const lightboxClose = document.getElementById('lightbox-close-btn');
+            const mainPhotoWrapper = document.getElementById('main-photo-wrapper');
+
+            thumbs.forEach(thumb => {
+                thumb.addEventListener('click', () => {
+                    thumbs.forEach(t => t.classList.remove('thumb-active'));
+                    thumb.classList.add('thumb-active');
+
+                    const imgSrc = thumb.getAttribute('data-img');
+                    const titleText = thumb.getAttribute('data-title');
+                    const subText = thumb.getAttribute('data-sub');
+
+                    mainImg.src = imgSrc;
+                    mainTitle.textContent = titleText;
+                    mainSub.textContent = subText;
+                });
+            });
+
+            function openLightbox() {
+                lightboxImg.src = mainImg.src;
+                lightboxTitle.textContent = mainTitle.textContent;
+                lightboxSub.textContent = mainSub.textContent;
+                lightboxModal.classList.remove('hidden');
+            }
+
+            lightboxTrigger.addEventListener('click', (e) => {
+                e.stopPropagation();
+                openLightbox();
+            });
+
+            mainPhotoWrapper.addEventListener('click', openLightbox);
+
+            lightboxClose.addEventListener('click', () => {
+                lightboxModal.classList.add('hidden');
+            });
+
+            lightboxModal.addEventListener('click', (e) => {
+                if (e.target === lightboxModal) {
+                    lightboxModal.classList.add('hidden');
+                }
+            });
+
+            // 4. 3-Stage Timeline Data
+            const timelineData = {
+                1: {
+                    badge: 'STAGE 01 · 1~2주 차 집중 정화기',
+                    title: '핵심 원료에 의한 대량 식이섬유 흡착 및 배출',
+                    mechanism: '<strong>• 과학적 기전:</strong> 초고함량 차전자피분말(4,400mg)과 난소화성말토덱스트린, 귀리식이섬유, 줄풀·조릿대가 수분을 흡수해 물리적으로 팽창하며 장관 내 묵은 숙변, 습열, 가스를 흡착하여 배출합니다.',
+                    feeling: '<strong>• 주요 체감 변화:</strong> 복부 팽만감 감소, 규칙적인 배변 리듬 확보, 아침마다 몸이 가벼워지는 상쾌함을 경험합니다.',
+                    tags: ['차전자피분말 4,400mg', '난소화성말토덱스트린', '귀리식이섬유', '줄풀 · 조릿대']
+                },
+                2: {
+                    badge: 'STAGE 02 · 3~4주 차 장벽 복원기',
+                    title: '다종 유익균 정착 및 장벽 과학적 회복',
+                    mechanism: '<strong>• 과학적 기전:</strong> 17종 혼합유산균(BNR17 포함)과 복합 프리바이오틱스(프락토올리고당·갈락토올리고당)가 유익균 우점 환경을 조성하고, 항염·항산화 식물성 원료가 장 상피세포 치밀결합(Tight Junction)을 강화합니다.',
+                    feeling: '<strong>• 주요 체감 변화:</strong> 장 누수 독소 차단 보조, 식후 나른함과 피로 완화, 환절기 및 일상 면역 컨디션 안정에 도움을 줍니다.',
+                    tags: ['17종 혼합유산균 (BNR17)', '프락토올리고당', '갈락토올리고당', '어성초 · 삼백초']
+                },
+                3: {
+                    badge: 'STAGE 03 · 2~3개월 차 전신 순환기',
+                    title: '전신 대사 순환 및 지질 관리 지원',
+                    mechanism: '<strong>• 과학적 기전:</strong> 단쇄지방산(SCFA) 대사 안정과 함께 미강·엉겅퀴추출물의 항산화·지질 대사 지원, 난소화성말토덱스트린의 혈당·체중 관리 작용이 장-뇌 축, 장-지방 축, 장-피부 축을 활성화합니다.',
+                    feeling: '<strong>• 주요 체감 변화:</strong> 체지방 및 지질 프로필 관리 보조, 맑고 투명한 안색 개선, 지속 가능한 전신 에너지 활력을 체감합니다.',
+                    tags: ['미강추출분말', '엉겅퀴추출물', '핑거루트 · 단호박', '단쇄지방산(SCFA) 순환']
+                }
+            };
+
+            const timelineBtns = document.querySelectorAll('.timeline-btn');
+            timelineBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const stage = btn.getAttribute('data-stage');
+                    const data = timelineData[stage];
+
+                    timelineBtns.forEach(b => {
+                        b.classList.remove('bg-forest-900', 'text-white', 'shadow-lg', 'border-forest-900');
+                        b.classList.add('bg-hanji', 'text-charcoal', 'border-gray-200');
+                        const badgeSpan = b.querySelector('span');
+                        badgeSpan.classList.remove('bg-gold-500', 'text-forest-950');
+                        badgeSpan.classList.add('bg-forest-100', 'text-forest-900');
+                        const subP = b.querySelector('p');
+                        subP.classList.remove('text-gray-300');
+                        subP.classList.add('text-gray-600');
+                    });
+
+                    btn.classList.add('bg-forest-900', 'text-white', 'shadow-lg', 'border-forest-900');
+                    btn.classList.remove('bg-hanji', 'text-charcoal', 'border-gray-200');
+                    const activeBadge = btn.querySelector('span');
+                    activeBadge.classList.add('bg-gold-500', 'text-forest-950');
+                    activeBadge.classList.remove('bg-forest-100', 'text-forest-900');
+                    const activeSub = btn.querySelector('p');
+                    activeSub.classList.add('text-gray-300');
+                    activeSub.classList.remove('text-gray-600');
+
+                    document.getElementById('stage-badge').textContent = data.badge;
+                    document.getElementById('stage-title').textContent = data.title;
+                    document.getElementById('stage-mechanism').innerHTML = data.mechanism;
+                    document.getElementById('stage-feeling').innerHTML = data.feeling;
+                    document.getElementById('stage-tags').innerHTML = data.tags
+                        .map(t => `<span class="px-3 py-1.5 rounded-xl bg-forest-50 text-forest-900 text-xs font-bold">${t}</span>`)
+                        .join('');
+                });
+            });
+
+            // 5. 23 Ingredients Data & Filtering
+            const ingredientsList = [
+                { no: '01', name: '차전자피분말', highlight: true, desc: '변비 완화, 설사 완화, 혈당 조절, 콜레스테롤 조절, 체중 관리', tags: ['변비 완화', '설사 완화', '혈당 조절', '콜레스테롤 조절', '체중 관리'], cats: ['장 건강', '혈당', '체중'] },
+                { no: '02', name: '알로에베라겔분말', highlight: false, desc: '피부 건강 개선, 소화건강 증진, 면역력 증진, 혈당 조절, 구강 건강 개선', tags: ['피부 건강', '소화건강', '면역력 증진', '혈당 조절'], cats: ['장 건강', '혈당', '면역', '피부'] },
+                { no: '03', name: '난소화성 말토덱스트린', highlight: false, desc: '혈당 조절, 체중 관리, 장 건강, 콜레스테롤 및 중성지방 저하', tags: ['혈당 조절', '체중 관리', '장 건강', '중성지방 저하'], cats: ['장 건강', '혈당', '체중'] },
+                { no: '04', name: '프락토올리고당분말', highlight: false, desc: '유익균의 먹이, 혈당 감소, 체중 조절, 콜레스테롤 수치 감소, 변비 개선', tags: ['유익균의 먹이', '혈당 감소', '체중 조절', '변비 개선'], cats: ['장 건강', '혈당', '체중'] },
+                { no: '05', name: '치커리뿌리추출분말', highlight: false, desc: '혈당 조절, 소화 건강, 체중 관리', tags: ['혈당 조절', '소화 건강', '체중 관리'], cats: ['장 건강', '혈당', '체중'] },
+                { no: '06', name: '핑거루트분말', highlight: false, desc: '항염 효과, 면역력 증진, 소화건강', tags: ['항염 효과', '면역력 증진', '소화건강'], cats: ['장 건강', '면역'] },
+                { no: '07', name: '곡물혼합분말', highlight: false, desc: '풍부한 식이섬유, 충분한 영양가', tags: ['풍부한 식이섬유', '영양 균형'], cats: ['장 건강'] },
+                { no: '08', name: '줄풀분말', highlight: true, desc: '노화 방지, 독소 배출, 위장 건강, 염증 완화, 면역력 강화, 피부질환 개선, 심혈관 질환 예방', tags: ['노화 방지', '독소 배출', '위장 건강', '염증 완화', '면역력 강화'], cats: ['장 건강', '면역', '피부'] },
+                { no: '09', name: '귀리식이섬유', highlight: false, desc: '체중 조절, 포만감, 콜레스테롤 개선, 혈당 조절, 소화 증진, 면역력 강화', tags: ['체중 조절', '포만감', '콜레스테롤 개선', '혈당 조절', '소화 증진'], cats: ['장 건강', '혈당', '체중', '면역'] },
+                { no: '10', name: '다시마농축분말', highlight: false, desc: '갑상선 기능 개선, 심혈관 건강, 소화 기능 개선, 체중 조절 도움', tags: ['심혈관 건강', '소화 기능 개선', '체중 조절'], cats: ['장 건강', '체중', '피부'] },
+                { no: '11', name: '17종혼합유산균', highlight: true, desc: 'BNR 17 유산균, 체중·체지방 감소, 혈당 조절, 지질대사 개선, 장 건강 개선, 장내미생물 개선, 지방 축적 억제', tags: ['BNR 17 유산균', '체중·체지방 감소', '혈당 조절', '지질대사 개선', '장내미생물 개선'], cats: ['장 건강', '혈당', '체중'] },
+                { no: '12', name: '맥주효모', highlight: false, desc: '탈모 개선, 혈당 개선, 면역력 강화, 당뇨 예방', tags: ['혈당 개선', '면역력 강화', '활력 지원'], cats: ['혈당', '면역', '피부'] },
+                { no: '13', name: '갈락토올리고당', highlight: false, desc: '장 건강, 염증 반응 감소, 면역력 강화, 미생물의 먹이', tags: ['장 건강', '염증 감소', '면역력 강화', '미생물의 먹이'], cats: ['장 건강', '면역'] },
+                { no: '14', name: '엉겅퀴추출물분말', highlight: false, desc: '간 건강 개선, 항산화 작용, 항염 효과, 혈액순환 개선', tags: ['간 건강 개선', '항산화 작용', '항염 효과', '혈액순환 개선'], cats: ['면역', '피부'] },
+                { no: '15', name: '삼백초분말', highlight: false, desc: '항염, 항알레르기 효과, 항산화, 면역력 증진, 이뇨, 부종 완화, 심혈관 보호', tags: ['항염·항산화', '면역력 증진', '부종 완화', '심혈관 보호'], cats: ['면역', '피부'] },
+                { no: '16', name: '어성초추출분말', highlight: false, desc: '염증 제거, 피부 건강, 혈액순환, 두피 건강', tags: ['염증 제거', '피부 건강', '혈액순환', '두피 건강'], cats: ['면역', '피부'] },
+                { no: '17', name: '단호박분말', highlight: true, desc: '항산화, 면역력, 눈 건강, 소화기능 강화, 체중 조절, 심혈관 건강, 피부 건강', tags: ['항산화', '면역력', '소화기능 강화', '체중 조절', '피부 건강'], cats: ['장 건강', '체중', '면역', '피부'] },
+                { no: '18', name: '분리대두단백', highlight: false, desc: '체내 지방 감소, 근육 증가, 체중 관리, 체지방 감소, 심장 건강 지원', tags: ['체내 지방 감소', '근육 증가', '체중 관리', '심장 건강'], cats: ['체중', '피부'] },
+                { no: '19', name: '미강추출분말', highlight: false, desc: '콜레스테롤 감소, 항산화, 혈액 순환, 변비 예방, 장 건강, 피부 미용', tags: ['콜레스테롤 감소', '항산화', '혈액 순환', '변비 예방', '피부 미용'], cats: ['장 건강', '혈당', '피부'] },
+                { no: '20-23', name: '우유, 대두, 밀, 메밀', highlight: true, desc: '뼈 건강, 근육, 면역력, 체중 관리, 노화 방지, 변비 개선, 소화관 활성화, 소화 개선, 혈액순환 개선, 체중 관리', tags: ['뼈·근육 건강', '면역력', '체중 관리', '노화 방지', '소화관 활성화'], cats: ['장 건강', '체중', '면역', '피부'] }
+            ];
+
+            const ingredientsGrid = document.getElementById('ingredients-grid');
+            const searchInput = document.getElementById('ingredient-search');
+            const filterPills = document.querySelectorAll('.filter-pill');
+            let currentFilter = 'all';
+
+            function renderIngredients() {
+                const query = searchInput.value.trim().toLowerCase();
+                const filtered = ingredientsList.filter(item => {
+                    const matchesCategory = currentFilter === 'all' || item.cats.includes(currentFilter);
+                    const matchesQuery = !query || item.name.toLowerCase().includes(query) || item.desc.toLowerCase().includes(query);
+                    return matchesCategory && matchesQuery;
+                });
+
+                if (filtered.length === 0) {
+                    ingredientsGrid.innerHTML = `<div class="col-span-full text-center py-10 text-gray-500 text-sm">검색 조건에 일치하는 원료가 없습니다. 다른 키워드로 검색해 주세요.</div>`;
+                    return;
+                }
+
+                ingredientsGrid.innerHTML = filtered.map(item => `
+                    <div class="p-5 rounded-2xl border ${item.highlight ? 'bg-forest-50/60 border-forest-900/20' : 'bg-white border-gray-200'} flex items-start space-x-4 hover:shadow-md transition">
+                        <div class="w-11 h-11 rounded-xl ${item.highlight ? 'bg-forest-900 text-gold-400' : 'bg-hanji text-forest-900 border border-gray-200'} font-extrabold text-xs flex items-center justify-center shrink-0">
+                            ${item.no}
+                        </div>
+                        <div class="space-y-2 flex-1">
+                            <h4 class="font-bold text-base ${item.highlight ? 'text-forest-900' : 'text-charcoal'}">${item.name}</h4>
+                            <p class="text-xs text-gray-600 leading-relaxed">${item.desc}</p>
+                            <div class="flex flex-wrap gap-1.5 pt-0.5">
+                                ${item.tags.map(tag => `<span class="px-2.5 py-0.5 rounded-md text-[11px] font-semibold ${item.highlight ? 'bg-emerald-100/80 text-emerald-900' : 'bg-gray-100 text-gray-700'}">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            filterPills.forEach(pill => {
+                pill.addEventListener('click', () => {
+                    currentFilter = pill.getAttribute('data-filter');
+                    filterPills.forEach(p => {
+                        p.classList.remove('bg-forest-900', 'text-white');
+                        p.classList.add('bg-hanji', 'text-charcoal', 'border', 'border-gray-200');
+                    });
+                    pill.classList.add('bg-forest-900', 'text-white');
+                    pill.classList.remove('bg-hanji', 'text-charcoal', 'border', 'border-gray-200');
+                    renderIngredients();
+                });
+            });
+
+            searchInput.addEventListener('input', renderIngredients);
+            renderIngredients();
+
+            // 6. Cleansing Accordion
+            const accordionBtns = document.querySelectorAll('.accordion-btn');
+            accordionBtns.forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const content = btn.nextElementSibling;
+                    const icon = btn.querySelector('i');
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
